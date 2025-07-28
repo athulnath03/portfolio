@@ -1,0 +1,74 @@
+/* --------------------------------------------------Skills Section---------------------------------------------- */
+.skills {
+  padding: 50px;
+  /* background: rgba(255, 255, 255, 0.02); */
+}
+
+.skill-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: -40px;
+}
+
+.frontend-skills {
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.skill-texts h3 {
+  color: rgba(242, 242, 242, 0.808);
+}
+
+#tags {
+  display: none;
+}
+
+.sphere-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+@media(max-width: 768px) {
+  .skill-wrapper {
+    margin-top: 0;
+    flex-direction: column-reverse;
+  }
+
+  .skill-texts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .skill-texts h3 {
+    align-self: center;
+    font-size: 14px;
+  }
+
+  .frontend-skills {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+  }
+}
+
+@media(max-width: 480px) {
+  .skill-wrapper {
+    margin-top: 0;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  #tagcanvas {
+    width: 400;
+    height: 400;
+  }
+}
