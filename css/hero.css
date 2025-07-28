@@ -283,3 +283,9 @@
               bottom: 40px;
           }
       }
+
+      @media (max-width: 480px) {
+            .scroll-icon {
+                  display: none;
+            }
+      }
