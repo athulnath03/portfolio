@@ -271,32 +271,42 @@
               <script src="https://www.goat1000.com/tagcanvas.min.js"></script>
 
               <script>
+                function getCanvasSize() {
+                  if (window.innerWidth < 500) return 300;
+                  else if (window.innerWidth < 768) return 400;
+                  else return 500;
+                }
+
+                function resizeCanvas() {
+                  const canvas = document.getElementById('tagCanvas');
+                  const size = getCanvasSize();
+                  canvas.width = size; // actual drawing width
+                  canvas.height = size; // actual drawing height
+                }
+
+                window.addEventListener('resize', () => {
+                  resizeCanvas();
+                  TagCanvas.Reload('tagCanvas');
+                });
+
                 window.onload = function () {
+                  resizeCanvas();
                   try {
                     TagCanvas.Start('tagCanvas', 'tags', {
                       textColour: null,
-                      outlineColour: '#ffffff',
+                      outlineColour: '#f2f2f200',
                       reverse: true,
                       depth: 1,
-                      maxSpeed: 0.1,
+                      maxSpeed: 0.05,
                       initial: [0.01, -0.01],
                       imageScale: 0.05,
-                      zoom: 1,
-                      zoomMax: 3.0,
-                      zoomMin: 0.5,
+                      zoom: 1.0,
+                      zoomMax: 2.0,
+                      zoomMin: 0.6,
                       wheelZoom: false,
-                      noSelect: true,
                       dragControl: true,
                       freezeActive: false,
-                      fadeIn: 800,
-                      outlineMethod: "block",
-                      onDrawTag: function(tag) {
-                        if (TagCanvas.hovering) {
-                          tag.element.classList.add('tagcanvas-hover');
-                        } else {
-                          tag.element.classList.remove('tagcanvas-hover');
-                        }
-                      }
+                      fadeIn: 800
                     });
                   } catch (e) {
                     console.log('Canvas error:', e);
