@@ -1,0 +1,150 @@
+/* ---------------------- Skills Section ---------------------- */
+.skills {
+  padding: 50px;
+}
+
+.skill-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: -70px;
+  padding: 20px;
+}
+
+.skill-texts h3 {
+  color: rgba(242, 242, 242, 0.808);
+}
+
+.skill-tile {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #1a1a1a;
+  color: #e5e5e5;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.skill-tile:hover {
+  background-color: #262626;
+  transform: translateY(-2px);
+}
+
+.skill-tile svg {
+  width: 20px;
+  height: 20px;
+}
+
+.frontend-skills,
+.backend-skills,
+.tools-used {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-texts h3 {
+  margin-top: 16px;
+  margin-bottom: 8px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+
+.frontend-skills,
+.backend-skills,
+.tools-used {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+/* Sphere container */
+.sphere-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+canvas {
+  display: block;
+  margin: auto;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+}
+
+.tagcloud {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  touch-action: none; /* Prevent scrolling during drag */
+}
+
+
+/* Sphere text styling to match .button look */
+.tagcloud span {
+  display: inline-block;
+  padding: 5px 10px;
+  border: 1px solid rgba(242, 242, 242, 0.5);
+  border-radius: 15px;
+  color: rgba(242, 242, 242, 0.808);
+  font-size: 12px;
+  transition: border 0.3s ease;
+}
+
+.tagcloud span:hover {
+  border-color: #00ff88;
+  color: #00ff88;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .skill-wrapper {
+    margin-top: -50px;
+    flex-direction: column-reverse;
+  }
+  
+  .skill-texts {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .skill-texts h3 {
+    align-self: center;
+    font-size: 14px;
+  }
+
+  .skill-tile {
+    padding: 5px 10px;
+  }
+  
+  .frontend-skills,
+  .backend-skills,
+  .tools-used {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .tagcloud span {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+
+}
+
+

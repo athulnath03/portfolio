@@ -1,0 +1,147 @@
+  /* ------------------------------------------------Projects Section------------------------------------------------ */
+  .projects {
+    padding: 50px;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto;
+  }
+  
+  .section-title {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 60px;
+    background: linear-gradient(45deg, #ffffff, #888);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .project-grid {
+    display: grid;
+    gap: 40px;
+  }
+  
+  .project-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+
+  .project-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: #00ff88;
+  }
+
+  .project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(45deg, #00ff88, #00d4ff);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+
+  .project-card:hover::before {
+    transform: scaleX(1);
+  }
+
+  .project-year {
+    padding: 5px 5px 0 0;
+    font-size: 14px;
+    color: #00ff88;
+    font-weight: 600;
+    margin-bottom: 15px;
+    display: inline-block;
+  }
+
+  .project-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #ffffff;
+    display: inline-block;
+  }
+
+  .project-description {
+    color: #ccc;
+    font-size: clamp(1rem, 2.5vw, 1.125rem);
+    line-height: 1.6;
+    text-align: justify;
+    margin-bottom: 15px;
+  }
+
+  .card-footer {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .stack {
+    display: flex;
+    gap: 10px;
+  }
+
+  .stack svg {
+    margin: 5px;
+  }
+
+  /* ---- Custom styles for view/reveal button & mask ---- */
+  .project-view-mask {
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.45s cubic-bezier(.45,1.2,.5,1);
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    height: 50%;
+    z-index: 2;
+  }
+
+  .project-card:hover .project-view-mask,
+  .project-view-mask:focus-within{
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .project-view-gradient {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    height: 100%;
+    z-index: 1;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 20%, rgba(0,0,0,0.1) 100%);
+    pointer-events: none;
+    border-radius: 0 0 20px 20px;
+  }
+
+  /* Place button absolutely dead-center horizontally, some px above card bottom. No layout shift! */
+  .project-view-btn {
+    z-index: 2;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 16px);
+    /* Fades and slides up on reveal */
+    transition: opacity 0.36s cubic-bezier(.45,1.2,.5,1), transform 0.32s ease;
+    opacity: 0;
+    pointer-events: auto;
+  }
+
+  /* Animate in on hover */
+  .project-card:hover .project-view-btn,
+  .project-view-mask:focus-within .project-view-btn{
+    opacity: 1;
+    transform: translate(-50%, 0) scale(1);
+  }
+
+  /* REMOVE BLUR FX ONLY FOR REVEALED BUTTON (fixes blur bug!) */
+  .project-view-mask .send-btn {
+    backdrop-filter: none !important;
+    background: rgba(29,29,29, 0.85); /* strong fallback background */
+  }

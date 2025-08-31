@@ -1,0 +1,281 @@
+/* -------------------------------------------------About Me Section----------------------------------------------- */
+  .about-me {
+    padding: 50px;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto;
+  }
+
+  .container {
+    width: 100%;
+    transition: all 0.3s ease;
+  }
+
+  .section-title {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 60px;
+    background: linear-gradient(45deg, #ffffff, #888);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .about-me-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .typewriter {
+      font-size: 2.5rem;
+      display: flex;
+      align-items: center;
+      margin-bottom: 30px;
+      margin-top: -30px;
+    }
+
+    .typewriter span {
+      color: #00ff88;
+    }
+
+    .typewriter P {
+      color: rgb(236, 236, 236);
+      text-wrap: nowrap;
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 2px;
+      height: 1em;
+      background: #00ff88;
+      margin-left: 4px;
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0; }
+    }
+
+    @media (max-width: 480px) {
+      .typewriter { font-size: 1.4rem; }
+    }
+
+  .fade-card {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 20px;
+    box-sizing: border-box;
+    cursor: pointer;
+  }
+
+  .fade-card-front,
+  .fade-card-back {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: #ccc;
+    padding: 40px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    transition: 
+      opacity 0.42s cubic-bezier(.5,.02,.41,.98),
+      clip-path 0.48s cubic-bezier(.6,.02,.4,1),
+      background 0.25s, border-color 0.25s;
+    z-index: 1;
+  }
+
+  .fade-card-front {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+    z-index: 2;
+    flex-direction: column;
+    justify-content: center;
+    text-align: justify;
+    line-height: 1.6;
+  }
+  
+  .intro {
+    color: #ccc;
+    width: 100%;
+    margin: 0;
+    font-size: clamp(1rem, 2.5vw, 1.125rem);
+    line-height: 1.6;
+    text-align: justify;
+  }
+  
+  .fade-card-back {
+    opacity: 0;
+    clip-path: inset(0 100% 0 0);
+    z-index: 1;
+    gap: 1.25rem;
+    color: #ddd;
+    justify-content: space-between;
+  }
+  
+  .fade-card:hover .fade-card-front {
+    opacity: 0;
+    clip-path: inset(0 0 0 100%);
+    pointer-events: none;
+  }
+  
+  .fade-card:hover .fade-card-back {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+    z-index: 2;
+    pointer-events: auto;
+  }
+
+  /* Back card profile */  
+  .profile-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 0;
+    color: #00ff88;
+    text-align: left;
+  }
+  
+  .profile-name {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #00ff88;
+    line-height: 1.1;
+    letter-spacing: 0.04em;
+    text-align: left;
+    overflow-wrap: break-word;
+  }
+  
+  .profile-role {
+    font-size: 18px;
+    font-weight: 600;
+    color: #a0fdaa;
+    text-align: left;
+    overflow-wrap: break-word;
+  }
+  
+  .date-joined {
+    font-weight: 400;
+  }
+
+  .profile-desc {
+    width: 50rem;
+    margin: 0;
+    font-size: clamp(1rem, 2.5vw, 1.125rem);
+    line-height: 1.6;
+    color: #bbb;
+    text-align: justify;
+    overflow-wrap: break-word;
+  }
+
+  /* Responsive styling (match .projects) */
+  @media (max-width: 768px) {
+    
+    .about-me {
+      padding: 40px 20px;
+    }
+    
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+    }
+    
+    .fade-card-front, .fade-card-back {
+      padding: 20px;
+    }
+
+    .intro {
+      font-size: 14px;
+    }
+    
+    .profile-name {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+    
+    .profile-role {
+      font-size: 16px;
+    }
+
+    .date-joined {
+      font-size: 14px;
+    }
+
+    .line {
+      display: none;
+    }
+    
+    .profile-desc {
+      font-size: 14px;
+      width: 300px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    
+    .about-me {
+      padding: 25px 6px;
+    }
+    
+    .section-title {
+      font-size: 1.55rem;
+      margin-bottom: 22px;
+    }
+
+    .about-me-wrapper {
+      margin-top: -20px;
+    }
+
+    .typewriter {
+      margin-top: 0;
+    }
+    
+    .fade-card-front, .fade-card-back {
+      padding: 15px;
+    }
+
+    .fade-card-back {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .intro {
+      font-size: 13px;
+    }
+    
+    .profile-name {
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+    
+    .profile-role {
+      font-size: 13px;
+      width: 145px;
+      margin-bottom: 0px;
+    }
+
+    .profile-desc {
+      font-size: 12px;
+      width: 150px;
+    }
+
+    .line {
+      display: none;
+    }
+  }
