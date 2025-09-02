@@ -58,7 +58,7 @@ const Connect = () => {
             required
           ></textarea>
           <button type="submit" className="send-btn">
-            Send Message
+            Commit
           </button>
         </form>
 

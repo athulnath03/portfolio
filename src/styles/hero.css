@@ -276,12 +276,7 @@
 @media (max-width: 480px) {
   
   .hero {
-    padding-top: 150px;
-  }
-
-  .button {
-    padding: 8px 16px;
-    font-size: 0.9rem;
+    padding-top: 160px;
   }
 
   .connect-icon, .resume-icon {
@@ -301,5 +296,6 @@
 
   .logo-wrapper {
     margin-top: 30px;
+    overflow: visible;
   }
 }
