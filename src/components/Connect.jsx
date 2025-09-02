@@ -68,7 +68,7 @@ const Connect = () => {
             <a title="LinkedIn" href="https://www.linkedin.com/in/athulnath03" target="_blank" class="social-item"><SiLinkedin/></a>
             <a title="Instagram" href="https://www.instagram.com/athulnath03/" target="_blank" class="social-item"><SiInstagram/></a>
             <a title="Twitter" href="https://x.com/athulnath03" target="_blank" class="social-item"><SiX/></a>
-            <a title="Behance" href="https://x.com/athulnath03" target="_blank" class="social-item"><SiBehance/></a>
+            <a title="Behance" href="https://behance.net/athulnath03" target="_blank" class="social-item"><SiBehance/></a>
           </div>
         
           <div className="social-handle">
