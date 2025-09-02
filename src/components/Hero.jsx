@@ -30,8 +30,10 @@ const Hero = () => {
             </svg>
           </a>
 
-          <a href="/Resume_Athul_Nath_M.pdf" target="_blank" className="button" rel="noopener noreferrer">
-            <span>Resume</span>
+          <a  className="button" 
+              href={`https://mozilla.github.io/pdf.js/web/viewer.html?file=${encodeURIComponent('https://athulnath03.vercel.app/Resume_Athul_Nath_M.pdf')}`}
+              target="_blank" rel="noopener noreferrer">
+            <span>Resume</span> 
             <svg className="resume-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
               <polyline points="7,10 12,15 17,10" />
