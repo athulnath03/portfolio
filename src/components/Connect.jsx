@@ -69,7 +69,6 @@ const Connect = () => {
             <a title="Instagram" href="https://www.instagram.com/athulnath03/" target="_blank" class="social-item"><SiInstagram/></a>
             <a title="Twitter" href="https://x.com/athulnath03" target="_blank" class="social-item"><SiX/></a>
             <a title="Behance" href="https://x.com/athulnath03" target="_blank" class="social-item"><SiBehance/></a>
-            <a title="Leetcode" href="https://x.com/athulnath03" target="_blank" class="social-item"><SiLeetcode/></a>
           </div>
         
           <div className="social-handle">
@@ -79,6 +78,7 @@ const Connect = () => {
                 <span>linkedin.com</span>
                 <span>instagram.com</span>
                 <span>twitter.com</span>
+                <span>behance.net</span>
               </div>
               <span className="username">/athulnath03</span>
             </div>
