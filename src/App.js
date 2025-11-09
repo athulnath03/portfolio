@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 
-import AOS from "aos";
-import "aos/dist/aos.css"
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 import Hero from './components/Hero';
 import AboutMe from './components/Aboutme';
@@ -12,33 +12,33 @@ import Footer from './components/Footer';
 
 function App() {
   useEffect(() => {
-    AOS.init({ duration: 1000 });
-    AOS.refresh();
-    AOS.refreshHard();
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
 
+    // Scroll spy: highlight nav links based on section in view
     const handleScroll = () => {
       const sections = document.querySelectorAll('section');
       const navLinks = document.querySelectorAll('nav a');
-      
+
       let current = '';
-        sections.forEach(section => {
+      sections.forEach((section) => {
         const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
         if (window.scrollY >= sectionTop - 50) {
           current = section.getAttribute('id');
         }
       });
-      
-      navLinks.forEach(link => {
+
+      navLinks.forEach((link) => {
         link.classList.remove('active');
         if (link.getAttribute('href') === `#${current}`) {
           link.classList.add('active');
         }
       });
-    
-      window.addEventListener('scroll', handleScroll);
-      return () => window.removeEventListener('scroll', handleScroll);
     };
+
+    window.addEventListener('scroll', handleScroll);
 
     const createParticle = () => {
       const particle = document.createElement('div');
@@ -57,10 +57,7 @@ function App() {
       const animation = particle.animate(
         [
           { transform: 'translateY(0px)', opacity: 0.7 },
-          {
-            transform: `translateY(-${window.innerHeight + 100}px)`,
-            opacity: 0,
-          },
+          { transform: `translateY(-${window.innerHeight + 100}px)`, opacity: 0 },
         ],
         {
           duration: 15000 + Math.random() * 10000,
@@ -74,7 +71,11 @@ function App() {
     };
 
     const particleInterval = setInterval(createParticle, 3000);
-    return () => clearInterval(particleInterval);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      clearInterval(particleInterval);
+    };
   }, []);
 
   return (

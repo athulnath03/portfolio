@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+//import React, { useEffect } from 'react';
 
 import '../styles/hero.css';
 import '../styles/global.css';
@@ -45,14 +45,14 @@ const Hero = () => {
 
       {/* Logo Slider with React Icons */}
       <div className="logo-wrapper">
-        <div data-aos="zoom-in-up" data-aos-delay="050"> <div className="logo-item logo-item2"> <SiReact/> </div> </div>
-        <div data-aos="zoom-in-up" data-aos-delay="100"> <div className="logo-item logo-item3"> <SiNextdotjs/> </div> </div>
-        <div data-aos="zoom-in-up" data-aos-delay="150"> <div className="logo-item logo-item4"> <SiTailwindcss/> </div> </div>
-        <div data-aos="zoom-in-up" data-aos-delay="200"> <div className="logo-item logo-item5"> <SiHtml5/> </div> </div>
-        <div data-aos="zoom-in-up" data-aos-delay="250"> <div className="logo-item logo-item6"> <SiCss3/> </div> </div>
-        <div data-aos="zoom-in-up" data-aos-delay="300"> <div className="logo-item logo-item7"> <SiJavascript/> </div> </div>
-        <div data-aos="zoom-in-up" data-aos-delay="350"> <div className="logo-item logo-item8"> <SiNodedotjs/> </div> </div>
-        <div> <div className="logo-item logo-item1"> <SiFigma/> </div> </div>
+        <div data-aos="zoom-in-up" data-aos-delay="050"> <div className="logo-item logo-item1"> <SiFigma/> </div> </div>
+        <div data-aos="zoom-in-up" data-aos-delay="100"> <div className="logo-item logo-item2"> <SiReact/> </div> </div>
+        <div data-aos="zoom-in-up" data-aos-delay="150"> <div className="logo-item logo-item3"> <SiNextdotjs/> </div> </div>
+        <div data-aos="zoom-in-up" data-aos-delay="200"> <div className="logo-item logo-item4"> <SiTailwindcss/> </div> </div>
+        <div data-aos="zoom-in-up" data-aos-delay="250"> <div className="logo-item logo-item5"> <SiHtml5/> </div> </div>
+        <div data-aos="zoom-in-up" data-aos-delay="300"> <div className="logo-item logo-item6"> <SiCss3/> </div> </div>
+        <div data-aos="zoom-in-up" data-aos-delay="350"> <div className="logo-item logo-item7"> <SiJavascript/> </div> </div>
+        <div> <div className="logo-item logo-item8"> <SiNodedotjs/> </div> </div>
       </div>
     </section>
   );

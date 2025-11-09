@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../styles/connect.css';
 import '../styles/global.css';
-import { SiBehance, SiGithub, SiInstagram, SiLeetcode, SiLinkedin, SiX } from 'react-icons/si';
+import { SiBehance, SiGithub, SiInstagram, SiLinkedin, SiX } from 'react-icons/si';
 
 const Connect = () => {
   const [formData, setFormData] = useState({
@@ -64,11 +64,11 @@ const Connect = () => {
 
         <div className="social-bar-wrapper" data-aos="flip-down" >
           <div className="social-bar-container">
-            <a title="GitHub" href="https://github.com/athulnath03" target="_blank" class="social-item"><SiGithub/></a>
-            <a title="LinkedIn" href="https://www.linkedin.com/in/athulnath03" target="_blank" class="social-item"><SiLinkedin/></a>
-            <a title="Instagram" href="https://www.instagram.com/athulnath03/" target="_blank" class="social-item"><SiInstagram/></a>
-            <a title="Twitter" href="https://x.com/athulnath03" target="_blank" class="social-item"><SiX/></a>
-            <a title="Behance" href="https://behance.net/athulnath03" target="_blank" class="social-item"><SiBehance/></a>
+            <a title="GitHub" href="https://github.com/athulnath03" target="_blank" rel="noopener noreferrer" className="social-item"><SiGithub/></a>
+            <a title="LinkedIn" href="https://www.linkedin.com/in/athulnath03" target="_blank" rel="noopener noreferrer" className="social-item"><SiLinkedin/></a>
+            <a title="Instagram" href="https://www.instagram.com/athulnath03" target="_blank" rel="noopener noreferrer" className="social-item"><SiInstagram/></a>
+            <a title="Twitter" href="https://x.com/athulnath03" target="_blank" rel="noopener noreferrer" className="social-item"><SiX/></a>
+            <a title="Behance" href="https://behance.net/athulnath03" target="_blank" rel="noopener noreferrer" className="social-item"><SiBehance/></a>
           </div>
         
           <div className="social-handle">

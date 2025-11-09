@@ -1,8 +1,8 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import '../styles/project.css';
 import '../styles/global.css';
 
-import { SiFigma, SiReact, SiNextdotjs, SiTailwindcss, SiHtml5, SiCss3, SiJavascript, SiNodedotjs, SiPython, SiFlask, SiMysql, SiGithub, SiOpencv } from 'react-icons/si';
+import { SiFigma, SiReact, SiHtml5, SiCss3, SiPython, SiFlask, SiMysql, SiGithub, SiOpencv } from 'react-icons/si';
 
 function  Projects(){
   return (
