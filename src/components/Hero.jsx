@@ -52,7 +52,7 @@ const Hero = () => {
         <div data-aos="zoom-in-up" data-aos-delay="250"> <div className="logo-item logo-item5"> <SiHtml5/> </div> </div>
         <div data-aos="zoom-in-up" data-aos-delay="300"> <div className="logo-item logo-item6"> <SiCss3/> </div> </div>
         <div data-aos="zoom-in-up" data-aos-delay="350"> <div className="logo-item logo-item7"> <SiJavascript/> </div> </div>
-        <div> <div className="logo-item logo-item8"> <SiNodedotjs/> </div> </div>
+        <div data-aos="zoom-in-up" data-aos-delay="400"> <div className="logo-item logo-item8"> <SiNodedotjs/> </div> </div>
       </div>
     </section>
   );
