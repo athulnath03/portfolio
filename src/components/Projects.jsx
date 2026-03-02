@@ -28,7 +28,7 @@ function  Projects(){
               </div>
               <div className="view-btn">
                 <a href="https://github.com/athulnath03/youtube-landing-page" target="_blank" rel="noopener noreferrer">
-                  <button className="skill-tile send-btn">Goto <SiGithub /></button>
+                  <button className="btn">Goto <SiGithub /></button>
                 </a>
               </div>
             </div>
@@ -51,7 +51,7 @@ function  Projects(){
               </div>
               <div className="view-btn">
                 <a href="https://github.com/athulnath03/Augmented-Whiteboard-Using-OpenCV" target="_blank" rel="noopener noreferrer">
-                  <button className="skill-tile send-btn">Goto <SiGithub /></button>
+                  <button className="btn">Goto <SiGithub /></button>
                 </a>
               </div>
             </div>
@@ -74,26 +74,11 @@ function  Projects(){
               </div>
               <div className="view-btn">
                 <a href="https://github.com/athulnath03/automatic-timetable-and-schedule-generator" target="_blank" rel="noopener noreferrer">
-                  <button className="skill-tile send-btn">Goto <SiGithub /></button>
+                  <button className="btn">Goto <SiGithub /></button>
                 </a>
               </div>
             </div>
-
-            
-
-            {/* <div className="project-view-mask">
-              <div className="project-view-gradient"></div>
-              <a
-                href=""
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <button className="project-view-btn send-btn">View on Github</button>
-              </a>
-            </div> */}
-
           </div>
-
         </div>
       </div>
     </section>
