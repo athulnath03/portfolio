@@ -1,112 +1,245 @@
-/* ------------------------------------------------Connect With Me------------------------------------------------- */
+/* =====================================================
+   CONNECT WITH ME SECTION
+===================================================== */
+
 .social-bar {
   padding: 50px 150px;
 }
 
-/* --------------Form--------------- */
-.glass-card {
-  backdrop-filter: blur(10px);
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
-  padding: 1.5rem;
-  width: 100%;
-  margin: 0 auto 2rem auto;
+/* =====================================================
+   CONTACT FORM
+===================================================== */
+
+.contact-form {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  gap: 1.5rem;
+  margin-bottom: 3rem;
 }
 
-.glass-card input,
-.glass-card textarea {
-  background: rgba(255, 255, 255, 0.08);
+/* ---------- Fieldsets ---------- */
+
+.contact-form fieldset {
+  position: relative;
+  padding: 1.2rem;
+  border-radius: 0.75rem;
+
   border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 10px;
-  color: #fff;
-  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.04);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition: 0.3s ease;
+}
+
+.contact-form fieldset:focus-within {
+  border-color: #00ff88;
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.2);
+}
+
+.contact-form legend {
+  padding: 0 8px;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* ---------- Inputs ---------- */
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  border: none;
+  background: transparent;
+
+  font-family: inherit;
   font-size: 1rem;
-  resize: vertical;
-  transition: border 0.3s ease, box-shadow 0.3s ease;
+  color: #fff;
 }
 
-.glass-card input:focus,
-.glass-card textarea:focus {
+.contact-form input:focus,
+.contact-form textarea:focus {
   outline: none;
-  border: 1px solid #00ff88;
-  box-shadow: 0 0 8px #00ff8855;
 }
 
-.glass-card input::placeholder,
-.glass-card textarea::placeholder {
-  color: #ccc;
-  font-size: small;
+input,
+textarea {
+  caret-color: white;
 }
+
+/* Autofill fix */
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill {
+  -webkit-text-fill-color: #fff !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* ---------- Input Layout ---------- */
 
 .form-input-wrapper {
   display: flex;
-  gap: 10px;
+  gap: 20px;
 }
 
-.form-input-wrapper input {
-  flex: 1
+.form-input-wrapper fieldset {
+  flex: 1;
 }
 
-.send-btn {
+/* ---------- Textarea ---------- */
+
+.textarea-wrapper {
+  position: relative;
+}
+
+.textarea-wrapper textarea {
+  resize: none;
+  padding-bottom: 20px;
+}
+
+/* =====================================================
+   BUTTON SYSTEM
+===================================================== */
+
+.btn {
+  position: relative;
+  overflow: hidden;
+
   display: inline-flex;
   justify-content: center;
   align-items: center;
   gap: 12px;
+
   padding: 14px 28px;
   font-size: 1rem;
   font-weight: 600;
+
   color: #fff;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
+
   text-decoration: none;
-  transition: all 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
-  overflow: hidden;
-  backdrop-filter: blur(10px);
   cursor: pointer;
+
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease, box-shadow 0.3s ease;
+
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
 }
 
-.send-btn::before {
+.btn::before {
   content: '';
   position: absolute;
   top: 0;
   left: -100%;
+
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,0.1),
+    transparent
+  );
+
   transition: left 0.5s ease;
 }
 
-.send-btn:hover::before {
+.btn:hover::before {
   left: 100%;
 }
 
-.send-btn:hover {
-  transform: scale(1.001);
-  /* background: rgba(255, 255, 255, 0.1); */
-  backdrop-filter: blur(20px);
+.btn:hover {
   border-color: #00ff88;
   color: #00ff88;
 }
 
-/* -----------Social Icons------------ */
+.btn-submit {
+  float: right;
+}
+
+/* ---------- Button Content ---------- */
+
+.btn-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  transition: opacity 0.3s ease;
+}
+
+/* ---------- Loading State ---------- */
+
+.btn.loading .btn-content {
+  opacity: 0;
+  padding: 14px 28px;
+}
+
+.btn.loading::after {
+  content: "";
+  position: absolute;
+
+  width: 20px;
+  height: 20px;
+
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top: 3px solid white;
+  border-radius: 50%;
+
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ---------- Success State ---------- */
+
+.btn.success {
+  width: 100%;
+  height: 100%;
+
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  border-radius: inherit;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn.success .btn-content {
+  opacity: 1;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* =====================================================
+   SOCIAL BAR
+===================================================== */
+
 .social-bar-wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   padding: 1.5rem;
+  border-radius: 20px;
+
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.1);
+
   backdrop-filter: blur(10px);
-  border-radius: 20px;
 }
 
 .social-bar-container {
@@ -115,21 +248,28 @@
   gap: 20px;
 }
 
+/* ---------- Social Items ---------- */
+
 .social-item {
-  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+
   width: 50px;
   height: 50px;
+  flex-shrink: 0;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   background: rgba(255, 255, 255, 0.05);
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.1);
+
   transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
   cursor: pointer;
   text-decoration: none;
+
   touch-action: manipulation;
 }
 
@@ -144,9 +284,17 @@
   position: absolute;
   top: 0;
   left: -100%;
+
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+
   transition: left 0.5s ease;
 }
 
@@ -166,42 +314,46 @@
   transform: scale(1.1);
 }
 
-.social-item:hover {
-  transform: scale(1.05);
-  background: rgba(255, 255, 255, 0.1);
-  border-color: #00ff88;
-}
-
-.social-item:hover svg {
-  fill: #00ff88;
-  transform: scale(1.1);
-}
+/* =====================================================
+   FOLLOW TEXT + ROTATION
+===================================================== */
 
 .follow-text {
   display: flex;
-  gap:1px;
-  vertical-align: middle;
-  text-align: right;
+  gap: 1px;
+
   height: 30px;
   width: 255px;
+
+  text-align: right;
+  vertical-align: middle;
+}
+
+.username {
+  font-size: 1.1rem;
+  color: #ffffff;
 }
 
 .rotating-text {
-  height: 24px;
-  font-size: 1.1rem;
-  overflow: hidden;
   position: relative;
+  overflow: hidden;
+
+  height: 24px;
   width: 135px;
+
+  font-size: 1.1rem;
 }
 
 .rotating-text span {
   position: absolute;
-  width: 100%;
   left: 0;
+  width: 100%;
+
   opacity: 0;
-  animation: rotateText 10s linear infinite;
-  color: #00ff88;
   text-align: right;
+  color: #00ff88;
+
+  animation: rotateText 10s linear infinite;
 }
 
 .rotating-text span:nth-child(1) { animation-delay: 0s; }
@@ -218,23 +370,25 @@
   100% { opacity: 0; transform: translateY(-100%); }
 }
 
-.username{
-    color: #ffffff;
-    font-size: 1.1rem;
-}
+/* =====================================================
+   RESPONSIVE
+===================================================== */
 
-/* -------------------------------------Responsive design---------------------------------------- */
+/* ---------- Tablet ---------- */
+
 @media (max-width: 768px) {
 
-  .social-bar-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
+  .social-bar {
+    padding: 30px 20px;
+    gap: 15px;
   }
 
-  .social-bar {
-    gap: 15px;
-    padding: 15px;
+  .form-input-wrapper {
+    flex-direction: column;
+  }
+
+  .social-bar-container {
+    gap: 10px;
   }
 
   .social-bar-wrapper {
@@ -247,9 +401,16 @@
     height: 45px;
   }
 
-  .social-item svg {
-    width: 30px;
-    height: 30px;
+  .send-btn {
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border-radius: 14px;
+    gap: 0;
+  }
+
+  .send-text {
+    display: none;
   }
 
   .footer {
@@ -257,12 +418,13 @@
   }
 }
 
-/* -------------------------------------Responsive design---------------------------------------- */
+/* ---------- Mobile ---------- */
+
 @media (max-width: 480px) {
 
   .social-bar {
-    gap: 15px;
     padding: 15px;
+    gap: 15px;
   }
 
   .social-bar-wrapper {
@@ -281,10 +443,7 @@
   }
 
   .follow-text {
-    display: flex;
-    gap: 1px;
     text-align: center;
-    height: 30px;
   }
 
   .footer {
