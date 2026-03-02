@@ -232,7 +232,7 @@ textarea:-webkit-autofill {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
+  flex-wrap: wrap-reverse;
   
   padding: 1.5rem;
   border-radius: 20px;
