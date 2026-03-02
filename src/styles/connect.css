@@ -232,7 +232,8 @@ textarea:-webkit-autofill {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
+  flex-wrap: wrap;
+  
   padding: 1.5rem;
   border-radius: 20px;
 
