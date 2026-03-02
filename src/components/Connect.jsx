@@ -4,25 +4,30 @@ import '../styles/global.css';
 import { SiBehance, SiGithub, SiInstagram, SiLinkedin, SiX } from 'react-icons/si';
 
 const Connect = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
+  const [formData, setFormData] = useState({name: '', email: '', message: ''});
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
+  const handleChange = (e) => {setFormData({...formData, [e.target.name]: e.target.value});};
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    alert('Message sent! I\'ll get back to you soon.');
-    setFormData({ name: '', email: '', message: '' });
+    try {
+      const response = await fetch("https://formspree.io/f/mldlello-", {
+        method: "POST",
+        headers: {"Content-Type": "application/json", Accept: "application/json"},
+        body: JSON.stringify(formData)
+      });
+      if (response.ok) {
+        console.log("Form submitted:", formData);
+        setStatus("success"); 
+        setFormData({name: "", email: "", message: ""});
+      } else {
+        console.error("Form error");
+        setStatus("idle");
+      }
+    } catch (error) {
+      console.error("Submission failed:", error);
+      setStatus("idle");
+    }
   };
 
   return (
@@ -31,35 +36,11 @@ const Connect = () => {
         <h2 className="section-title" data-aos="zoom-in-up">Let's Connect</h2>          
         <form className="glass-card" data-aos="zoom-in-up" onSubmit={handleSubmit}>
           <div className='form-input-wrapper'>
-            <input
-            type="text"
-            name="name"
-            placeholder="Your Name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
-
-          <input
-            type="email"
-            name="email"
-            placeholder="Your Email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
+            <input type="text" name="name" placeholder="Your Name" value={formData.name} onChange={handleChange} required/>
+            <input type="email" name="email" placeholder="Your Email" value={formData.email} onChange={handleChange} required/>
           </div>
-          <textarea
-            name="message"
-            placeholder="Your Message"
-            rows="5"
-            value={formData.message}
-            onChange={handleChange}
-            required
-          ></textarea>
-          <button type="submit" className="send-btn">
-            Commit
-          </button>
+          <textarea name="message" placeholder="Your Message" rows="5" value={formData.message} onChange={handleChange} required></textarea>
+          <button type="submit" className="send-btn">Commit</button>
         </form>
 
         <div className="social-bar-wrapper" data-aos="flip-down" >
