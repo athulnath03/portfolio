@@ -10,6 +10,7 @@
   justify-content: space-between;
   margin-top: -70px;
   padding: 20px;
+  flex-wrap: wrap-reverse;
 }
 
 .skill-texts h3 {
@@ -40,14 +41,6 @@
   height: 20px;
 }
 
-.frontend-skills,
-.backend-skills,
-.tools-used {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
 .skill-texts h3 {
   margin-top: 16px;
   margin-bottom: 8px;
@@ -56,10 +49,7 @@
   font-weight: bold;
 }
 
-
-.frontend-skills,
-.backend-skills,
-.tools-used {
+.frontend-skills, .backend-skills, .tools-used {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -86,9 +76,7 @@ canvas {
   width: 100%;
   max-width: 500px;
   height: auto;
-  touch-action: none; /* Prevent scrolling during drag */
 }
-
 
 /* Sphere text styling to match .button look */
 .tagcloud span {
@@ -142,9 +130,3 @@ canvas {
     font-size: 10px;
   }
 }
-
-@media (max-width: 768px) {
-
-}
-
-
