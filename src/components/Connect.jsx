@@ -5,7 +5,7 @@ import { SiBehance, SiGithub, SiInstagram, SiLinkedin, SiX } from 'react-icons/s
 
 const Connect = () => {
   const [formData, setFormData] = useState({name: '', email: '', message: ''});
-
+  const [status, setStatus] = useState("idle");
   const handleChange = (e) => {setFormData({...formData, [e.target.name]: e.target.value});};
 
   const handleSubmit = async (e) => {
