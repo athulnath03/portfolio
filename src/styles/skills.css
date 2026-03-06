@@ -99,6 +99,7 @@ canvas {
   .skill-wrapper {
     margin-top: -50px;
     flex-direction: column-reverse;
+    flex-wrap: nowrap;
   }
   
   .skill-texts {
