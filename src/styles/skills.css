@@ -95,7 +95,7 @@ canvas {
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .skill-wrapper {
     margin-top: -50px;
     flex-direction: column-reverse;
