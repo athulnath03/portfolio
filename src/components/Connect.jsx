@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { SiBehance, SiGithub, SiInstagram, SiLinkedin, SiX,} from "react-icons/si";
+import { SiBehance, SiGithub, SiInstagram, SiX,} from "react-icons/si";
+import { FaLinkedin } from "react-icons/fa";
 
 const Connect = () => {
   const [formData, setFormData] = useState({
@@ -66,7 +67,7 @@ const Connect = () => {
       href: "https://github.com/athulnath03",
     },
     {
-      icon: SiLinkedin,
+      icon: FaLinkedin,
       href: "https://linkedin.com/in/athulnath03",
     },
     {
@@ -158,30 +159,6 @@ const Connect = () => {
               className="w-full resize-none bg-transparent outline-none text-white placeholder:text-white/35"
             />
 
-            {/* <button
-              disabled={status === "loading"}
-              className={`
-              mt-5 ml-auto flex items-center justify-center
-              rounded-xl border px-8 py-3
-              transition-all duration-300
-              overflow-hidden relative
-
-              ${
-                status === "success"
-                  ? "w-full border-[#00ff88] text-[#00ff88]"
-                  : "border-white/10 hover:border-[#00ff88] hover:text-[#00ff88]"
-              }
-              `}
-            >
-              {status === "loading" ? (
-                <span className="spinner" />
-              ) : status === "success" ? (
-                "Gotcha! I'll get back to you soon."
-              ) : (
-                "Send"
-              )}
-            </button> */}
-
             <div className="flex justify-end mt-5">
               <button
                 type="submit"
@@ -241,6 +218,7 @@ const Connect = () => {
             
           "
         >
+          {/* Social Links */}
           <div className="flex gap-4">
             {socials.map(({ icon: Icon, href }) => (
               <a
@@ -250,44 +228,15 @@ const Connect = () => {
                 rel="noreferrer"
                 className="
                   group
-                  relative
-                  overflow-hidden
-
-                  w-14 h-14
-                  rounded-xl
-
+                  btn
+                  p-0
+                  h-[54px]
+                  w-[54px]
                   flex items-center justify-center
-
-                  bg-white/[0.05]
-                  border border-white/10
-
-                  backdrop-blur-xl
-
-                  transition-all
-                  duration-500
-
-                  hover:scale-105
-                  hover:border-[#00ff88]
-                  hover:bg-white/[0.08]
-
-                  before:absolute
-                  before:top-0
-                  before:left-[-100%]
-                  before:w-full
-                  before:h-full
-
-                  before:bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.12),transparent)]
-
-                  before:transition-all
-                  before:duration-700
-
-                  hover:before:left-[100%]
                 "
               >
-                <Icon 
+                <Icon
                   className="
-                    relative
-                    z-10
                     text-2xl
                     text-white
                     transition-all
@@ -300,6 +249,7 @@ const Connect = () => {
             ))}
           </div>
 
+          {/* Rotating Text */}
           <div className="flex text-lg">
             <div className="relative h-[28px] w-[140px] overflow-hidden text-right text-[#00ff88]">
               <span className="rotate-text">github.com</span>

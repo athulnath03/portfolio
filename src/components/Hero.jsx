@@ -4,7 +4,7 @@ import {
   SiNextdotjs,
   SiTailwindcss,
   SiHtml5,
-  SiCss3,
+  SiCss,
   SiJavascript,
   SiNodedotjs,
 } from "react-icons/si";
@@ -15,7 +15,7 @@ const icons = [
   { Icon: SiNextdotjs, label: "Next.js" },
   { Icon: SiTailwindcss, label: "Tailwind CSS" },
   { Icon: SiHtml5, label: "HTML5" },
-  { Icon: SiCss3, label: "CSS3" },
+  { Icon: SiCss, label: "CSS3" },
   { Icon: SiJavascript, label: "JavaScript" },
   { Icon: SiNodedotjs, label: "Node.js" },
 ];
@@ -33,44 +33,7 @@ export default function Hero() {
         text-center
       "
     >
-      {/* Ghost Text */}
-      {/* <div
-        className="
-          absolute inset-0
-          flex items-center justify-center
-          pointer-events-none
-          select-none
-          z-0
-        "
-      >
-        <h2
-          className="
-            flex flex-col
-            items-center
-            leading-[0.82]
-            font-black
-            uppercase
-            text-transparent
-            opacity-80
-            tracking-[-0.08em]
-
-            text-[5rem]
-            sm:text-[7rem]
-            md:text-[10rem]
-            lg:text-[14rem]
-            xl:text-[18rem]
-
-            [-webkit-text-stroke:1.5px_rgba(255,255,255,0.08)]
-
-            [mask-image:radial-gradient(circle_at_center,transparent_14%,black_48%)]
-            [-webkit-mask-image:radial-gradient(circle_at_center,transparent_14%,black_48%)]
-          "
-        >
-          <span>FULLSTACK</span>
-          <span>DEVELOPER</span>
-        </h2>
-      </div> */}
-
+      
       {/* Ghost Text */}
       <div
         className="
@@ -183,7 +146,7 @@ export default function Hero() {
         ">
           <a 
             href="#connect" 
-            className="btn flex-1 justify-center text-sm sm:text-base px-4 py-2 sm:px-6 sm:py-3">
+            className="btn flex-1 justify-center text-sm sm:text-base px-4 py-3 sm:px-6 sm:py-3">
             Let's Connect
           </a>
 
@@ -191,7 +154,7 @@ export default function Hero() {
             href="/Resume_Athul_Nath_M.pdf"
             target="_blank"
             rel="noreferrer"
-            className="btn flex-1 justify-center text-sm sm:text-base px-4 py-2 sm:px-6 sm:py-3"
+            className="btn flex-1 justify-center text-sm sm:text-base px-4 py-3 sm:px-6 sm:py-3"
           >
             Resume
           </a>

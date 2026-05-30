@@ -2,13 +2,14 @@ import React from "react";
 import {
   SiReact,
   SiNextdotjs,
-  SiHtml5,
   SiPython,
   SiFlask,
   SiMysql,
   SiGithub,
   SiOpencv,
   SiTailwindcss,
+  SiTypescript,
+  SiLeaflet,
 } from "react-icons/si";
 
 const projects = [
@@ -16,9 +17,9 @@ const projects = [
     title: "KL15 Depots",
     year: "2026",
     description:
-      "Designed and developed a visually striking, fully responsive landing page inspired by YouTube using HTML and CSS. This project highlights skills in modern front-end layout, navigation, mobile-friendly design, and streamlined user interaction—all crafted to deliver an engaging user experience and showcase strong UI/UX capabilities.",
+      "KL15 is a Progressive Web App built with Next.js, designed for KSRTC bus commuters in Kerala. It simplifies the experience of reaching out to bus depots — users can quickly call a specific depot for enquiry, discover nearby depots using location-based search, and filter buses by timing with a direct redirect to the official KSRTC site. Built as a PWA for a fast, app-like experience right from the browser — no installation needed.",
     github: "https://github.com/athulnath03/KL15",
-    stack: [SiNextdotjs, SiHtml5, SiTailwindcss],
+    stack: [SiNextdotjs, SiTypescript, SiTailwindcss, SiLeaflet],
   },
 
   {
@@ -141,33 +142,47 @@ function Projects() {
                 className="
                   flex
                   justify-between
-                  gap-5
+                  items-center
+                  gap-4
                 "
               >
                 {/* Stack */}
-                <div className="flex gap-3">
-                  {project.stack.map((Icon, i) => (
-                    <div
-                      key={i}
-                      className="
-                        flex
-                        h-12
-                        w-12
-                        items-center
-                        justify-center
-                        rounded-xl
-                        border
-                        border-white/10
-                        bg-white/5
-                        text-xl
-                        transition
-                        hover:border-[#00ff88]
-                        hover:text-[#00ff88]
-                      "
-                    >
-                      <Icon />
-                    </div>
-                  ))}
+                <div
+                  className="
+                    flex-1
+                    overflow-x-auto
+                    scrollbar-hide
+                    pb-2
+                  "
+                >
+                  <div
+                    className="
+                      flex
+                      gap-3
+                      w-max
+                      pr-2
+                      hint-scroll
+                    "
+                  >
+                    {project.stack.map((Icon, i) => (
+                      <div
+                        key={i}
+                        className="
+                          shrink-0
+                          flex items-center justify-center
+                          rounded-lg
+                          border border-neutral-700
+                          bg-neutral-900
+                          p-4
+                          text-sm
+                          transition
+                          hover:bg-neutral-800
+                        "
+                      >
+                        <Icon className="text-lg" />
+                      </div>
+                    ))}
+                  </div>
                 </div>
 
                 {/* Button */}
@@ -175,12 +190,9 @@ function Projects() {
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="shrink-0"
                 >
-                  <button
-                    className="
-                     btn
-                    "
-                  >
+                  <button className="btn flex items-center gap-2">
                     View
                     <SiGithub />
                   </button>
